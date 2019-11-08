@@ -1,12 +1,32 @@
-# face
+# face_related
 
-## 环境
+* Face detection 
+* Face Feature extraction
 
-* docker 
-* python3.6
+## The environment
 
-## How to use
+* docker - https://docs.docker.com/install/linux/docker-ce/ubuntu/
+* nvidia-docker - https://github.com/NVIDIA/nvidia-docker
 
-* 修改配置文件settings.py中Redis配置以及人脸检测模型和人脸识别模型的TF Serving地址
-* 修改uwsgi.ini和Dockerfile中端口
-* bash deploy.sh
+# Docker image(Flask)
+
+https://drive.google.com/open?id=1M9GRzR9k9X-ilGrigqouay17ChuEzhfb
+
+## Run
+
+* `sudo docker pull tensorflow/serving:1.13.0-gpu`
+* `sudo docker load -i flask-uwsgi-python-centos.tar`
+* `git clone https://github.com/MagicianQi/face_related`
+* `cd face_related && wget https://github.com/MagicianQi/face_related/releases/download/v0.1/model.tar.gz && tar -zxvf model.tar.gz`
+* Specify the GPU ID: `vim deploy.sh`
+    1.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L5
+    2.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L21
+* Specify the model absolute path：`vim deploy.sh`
+    1.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L7
+    2.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L23
+* `bash deploy.sh`
+* Test: `curl localhost:8080`
+
+## Other
+
+* Other API：https://github.com/MagicianQi/Scene_Text_Recognition/blob/master/flask_server.py
