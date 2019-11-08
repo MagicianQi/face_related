@@ -1,6 +1,4 @@
-# 敏感人物识别
-
-接口文档：https://wiki.soulapp-inc.cn/pages/viewpage.action?pageId=7210451
+# face
 
 ## 环境
 
