@@ -19,6 +19,7 @@ https://drive.google.com/open?id=1M9GRzR9k9X-ilGrigqouay17ChuEzhfb
 * `git clone https://github.com/MagicianQi/face_related`
 * `cd face_related && wget https://github.com/MagicianQi/face_related/releases/download/v0.1/model.tar.gz && tar -zxvf model.tar.gz`
 * Specify the GPU ID: `vim deploy.sh`
+
     1.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L5
     2.https://github.com/MagicianQi/face_related/blob/master/deploy.sh#L21
 * Specify the model absolute path：`vim deploy.sh`
