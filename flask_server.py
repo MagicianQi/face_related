@@ -12,7 +12,7 @@ face_verification_model = FaceVerificationModel()
 
 @app.route("/")
 def homepage():
-    return "Welcome to the SOUL Face Verification REST API!"
+    return "Welcome to the Face Verification REST API!"
 
 
 @app.route("/health")
