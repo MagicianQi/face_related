@@ -4,7 +4,7 @@ import flask
 import json
 
 from backend.FaceModel import FaceModel
-from utils.OOP import calculate_vector_cosine_similarity, download_image, base64_to_image
+from utils.OOP import calculate_vector_cosine_similarity, download_image, base64_to_image, draw_boxes
 
 app = flask.Flask(__name__)
 face_model = FaceModel()
@@ -71,6 +71,19 @@ def predict_similarity():
         except Exception as e:
             print("Error\t{}".format(e))
     return flask.jsonify(res)
+
+
+@app.route("/test/detection", methods=["GET"])
+def test():
+    return flask.render_template("home.html")
+
+
+@app.route("/api/draw", methods=["GET"])
+def draw():
+    if flask.request.method == "GET":
+        img_url = flask.request.args.get('ImageUrl')
+        _, boxes = face_model.predict_img(download_image(img_url))
+        return draw_boxes(img_url, ["{}".format(x+1) for x in range(len(boxes))], boxes)
 
 
 if __name__ == '__main__':

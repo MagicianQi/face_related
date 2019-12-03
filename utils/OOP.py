@@ -10,7 +10,7 @@ import random
 import requests
 import numpy as np
 
-from PIL import Image, ImageSequence
+from PIL import Image, ImageSequence, ImageDraw, ImageFont
 from sklearn.metrics.pairwise import euclidean_distances, cosine_similarity
 
 from settings import *
@@ -48,6 +48,31 @@ def image_to_base64(image):
     image_pil = io.BytesIO()
     image.save(image_pil, format='PNG')
     return base64.b64encode(image_pil.getvalue()).decode('utf-8')
+
+
+def draw_boxes(image_url, text_list, boxes):
+    image = download_image(image_url)
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype(FONT_FILE_PATH, FONT_SIZE)
+    for box, text in zip(boxes, text_list):
+        x1, y1, x2, y2 = box
+        p1, p2, p3, p4 = [x1, y1], [x2, y1], [x2, y2], [x1, y2]
+        draw.text(p4, text, font=font, fill=FONT_COLOR)
+        draw.line(tuple(p1 + p2), fill=LINE_COLOR)
+        draw.line(tuple(p2 + p3), fill=LINE_COLOR)
+        draw.line(tuple(p3 + p4), fill=LINE_COLOR)
+        draw.line(tuple(p4 + p1), fill=LINE_COLOR)
+    path = SAVE_TEMP_IMAGE_PATH + random_str(TEMP_IMAGE_RANDOM_NAME_LENGTH) + ".png"
+    image.save(path)
+    return "/" + path
+
+
+def random_str(length):
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    salt = ''
+    for i in range(length):
+        salt += random.choice(chars)
+    return salt
 
 
 def calculate_vector_cosine_similarity(embedding_a, embedding_b):

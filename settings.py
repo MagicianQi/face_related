@@ -8,3 +8,11 @@ IMAGE_SIZE = 160
 # GIF
 GIF_FRAME_INTERVAL = 5
 GIF_MAX_FRAME = 5
+
+# Test Image Config
+FONT_FILE_PATH = "static/simhei.ttf"
+SAVE_TEMP_IMAGE_PATH = "static/temporary/"
+FONT_SIZE = 12
+FONT_COLOR = (0, 255, 255)
+LINE_COLOR = (255, 0, 0)
+TEMP_IMAGE_RANDOM_NAME_LENGTH = 8
