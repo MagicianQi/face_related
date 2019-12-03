@@ -31,4 +31,4 @@ https://drive.google.com/open?id=1M9GRzR9k9X-ilGrigqouay17ChuEzhfb
 
 ## Other
 
-* Other API：https://github.com/MagicianQi/Scene_Text_Recognition/blob/master/flask_server.py
+* Other API：https://github.com/MagicianQi/face_related/blob/master/flask_server.py
