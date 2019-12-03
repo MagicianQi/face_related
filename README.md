@@ -1,7 +1,8 @@
 # face_related
 
-* Face detection 
-* Face Feature extraction
+* Face Detection(TF) 
+* Face Calibration(dlib)
+* Face Feature Extraction(TF)
 
 ## The environment
 
