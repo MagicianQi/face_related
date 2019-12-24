@@ -88,7 +88,7 @@ def calculate_vector_euclidean_distance(embedding_a, embedding_b):
 
 
 def calculate_matrix_cosine_similarity(matrix_a, matrix_b):
-    return cosine_similarity(matrix_a, matrix_b)
+    return 0.5 + 0.5 * cosine_similarity(matrix_a, matrix_b)
 
 
 def calculate_matrix_euclidean_distance(matrix_a, matrix_b):
