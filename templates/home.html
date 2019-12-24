@@ -24,7 +24,7 @@
     <div class="eleven wide column">
         <div class="ui fluid action input">
             <input id="urlinput" type="text" placeholder="网址">
-            <button class="ui button" onclick="process_url($('#urlinput').val())">OCR识别</button>
+            <button class="ui button" onclick="process_url($('#urlinput').val())">人脸检测</button>
         </div>
     </div>
     <div class="eight wide column">
@@ -65,7 +65,7 @@
             success: function (response) {
                 if (response) {
 		    if (response === "static/white.jpg"){
-	                $("#message").text("成功,但图片里没有字！！！");
+	                $("#message").text("空");
 		    }
 		    else {
 	                $("#message").text("成功！！！");
@@ -73,7 +73,7 @@
                     $("#result").html("<img class='ui image' src='" + response + "'>");
                 }
                 else {
-                    $("#message").text("成功，图片上没有字");
+                    $("#message").text("空");
                 }
             },
             error: function() {
