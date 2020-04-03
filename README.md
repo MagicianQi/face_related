@@ -1,6 +1,6 @@
 # face_related
 
-* Face Detection(TF) 
+* Face Detection(TF) (https://github.com/TropComplique/FaceBoxes-tensorflow)
 * Face Calibration(dlib)
 * Face Feature Extraction(TF)(https://github.com/davidsandberg/facenet)
 
