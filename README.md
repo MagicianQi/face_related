@@ -2,7 +2,7 @@
 
 * Face Detection(TF) 
 * Face Calibration(dlib)
-* Face Feature Extraction(TF)
+* Face Feature Extraction(TF)(https://github.com/davidsandberg/facenet)
 
 ## The environment
 
