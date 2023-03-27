@@ -1,7 +1,7 @@
 requests==2.20.0
 numpy==1.14.3
 scipy==1.1.0
-redis==3.2.1
+redis==4.5.3
 pandas==0.23.0
 glog==0.3.1
 flask==1.0.2
